@@ -12,3 +12,13 @@ data<- read.csv(url)
 str(data)
 ```
 
+```{r}
+sum(is.na(data))# NAs for numeric 
+
+length(is.na(data))# NAs for characters 
+```
+
+```{r}
+summary(data$year_introduced)
+```
+
