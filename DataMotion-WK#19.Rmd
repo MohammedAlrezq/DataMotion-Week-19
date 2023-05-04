@@ -1,8 +1,5 @@
 ---
-title: "WK#19"
-author: "Mohammed Alrezq"
-date: "2023-05-01"
-output: html_document
+title: "Data in Motion, LLC: WeeK#19"
 ---
 
 ```{r}
@@ -12,6 +9,8 @@ data<- read.csv(url)
 
 ```{r}
 library(dplyr)
+library(tidyverse)
+library(lubridate)
 library(ggplot2)
 library(tidyr)
 
@@ -56,7 +55,47 @@ describe(data[, sapply(data, is.numeric)])# sapply used for numeric variabels
 # f. Inversions_clean ➡️ Inversions
 # g. Gforce_clean ➡️ Gforce
 
-data %>% 
-  rename(Coaster_Name = coaster_name, Year_Introduced = year_introduced, Opening_Date = opening_date_clean, Speed_mph = speed_mph, Height_ft = height_ft, Inversions = Inversions_clean, Gforce = Gforce_clean)
+data <- data %>% 
+  rename(Coaster_Name = coaster_name, 
+         Year_Introduced = year_introduced, 
+         Opening_Date = opening_date_clean, 
+         Speed_mph = speed_mph, 
+         Height_ft = height_ft, 
+         Inversion_status = Inversions_clean, # "Inversion" already existed in the dataframe, thus, it renamed as "Inversion_status"
+         Gforce = Gforce_clean)
+```
+
+
+```{r}
+# Are there any duplicated rows?
+
+dup_rows <- data %>% 
+  filter(duplicated(.))
+
+nrow(dup_rows)# Zero duplicate rows 
+```
+
+```{r}
+# What are the top 3 years with the most roller coasters introduced?
+str(data)
+
+top_three <- data %>% 
+  group_by(Year_Introduced) %>% 
+  count() 
+
+ggplot(top_three, aes(x = Year_Introduced, y = n)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(x = "Year Introduced", y = "Number of Coasters") +
+  ggtitle("Top Three Most Frequent Year of Introduction")+
+  scale_x_continuous( breaks = unique(top_three$Year_Introduced))+ # to display year on x-axis 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) # to make "year" vertical on plot
+ 
+```
+
+*top three years* are 1998, 1999, 2000
+
+```{r}
+
+  
 ```
 
