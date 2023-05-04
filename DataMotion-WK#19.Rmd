@@ -7,18 +7,56 @@ output: html_document
 
 ```{r}
 url <- 'https://raw.githubusercontent.com/kedeisha1/Challenges/main/coaster_db.csv'
-
 data<- read.csv(url)
+```
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
 str(data)
+
+#Question 1: How many columns and rows are in the dataset?
+nrow(data)# number of rows 
+ncol(data)# number of columns 
+dim(data)
 ```
 
-```{r}
-sum(is.na(data))# NAs for numeric 
 
-length(is.na(data))# NAs for characters 
+```{r}
+#Question 2: Is there any missing data?
+
+missing_data <- data %>% 
+  summarise_all(~ sum(is.na(.))) %>% 
+  pivot_longer(everything(), names_to = "Variable", values_to = "count_missing")
+
+# Visualize and count missing data for each variable 
+ggplot(missing_data, aes(x = count_missing, y = Variable, fill = Variable))+
+  geom_col()
 ```
 
+
 ```{r}
-summary(data$year_introduced)
+#Question 3: Display the summary statistics of the numeric columns using the describe method.
+library(psych)# describe function is from psych package
+
+describe(data[, sapply(data, is.numeric)])# sapply used for numeric variabels 
+
+```
+
+
+```{r}
+# Question 4:Rename the following columns:
+# a. coaster_name ➡️ Coaster_Name
+# b. year_introduced ➡️ Year_Introduced
+# c. opening_date_clean ➡️ Opening_Date
+# d. speed_mph ➡️ Speed_mph
+# e. height_ft ➡️ Height_ft
+# f. Inversions_clean ➡️ Inversions
+# g. Gforce_clean ➡️ Gforce
+
+data %>% 
+  rename(Coaster_Name = coaster_name, Year_Introduced = year_introduced, Opening_Date = opening_date_clean, Speed_mph = speed_mph, Height_ft = height_ft, Inversions = Inversions_clean, Gforce = Gforce_clean)
 ```
 
