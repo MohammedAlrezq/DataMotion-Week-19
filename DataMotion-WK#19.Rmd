@@ -67,7 +67,7 @@ data <- data %>%
 
 
 ```{r}
-# Are there any duplicated rows?
+# # Question 5: Are there any duplicated rows?
 
 dup_rows <- data %>% 
   filter(duplicated(.))
@@ -76,7 +76,7 @@ nrow(dup_rows)# Zero duplicate rows
 ```
 
 ```{r}
-# What are the top 3 years with the most roller coasters introduced?
+# # Question 6: What are the top 3 years with the most roller coasters introduced?
 str(data)
 
 top_three <- data %>% 
