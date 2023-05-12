@@ -2,9 +2,9 @@
 
 This data received from Data Motion/weekly practice 
 
-#Challenge Questions
-1- How many columns and rows are in the dataset? done
-2- Is there any missing data? done
+*##*Challenge Questions
+1. How many columns and rows are in the dataset? done
+2. Is there any missing data? done
 3- Display the summary statistics of the numeric columns using the describe method. done
 4- Rename the following columns:
 A. coaster_name ➡️ Coaster_Name
