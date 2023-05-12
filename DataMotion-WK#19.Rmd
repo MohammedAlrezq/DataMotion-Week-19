@@ -13,12 +13,7 @@ data<- read.csv(url)
 ```
 
 ```{r, warning=FALSE}
-#library(dplyr)#rem
 library(tidyverse)
-#library(lubridate)#rem
-#library(ggplot2)#rem
-#library(tidyr)
-
 
 #Question 1: How many columns and rows are in the dataset?
 nrow(data)# number of rows 
@@ -92,8 +87,4 @@ data %>%
 
 *top three years* are 1998, 1999, 2000
 
-```{r}
-# What is the average speed? Also display a plot to show it’s distribution.
-
-```
 
