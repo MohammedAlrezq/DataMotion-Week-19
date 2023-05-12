@@ -1,0 +1,475 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Data in Motion, LLC: WeeK\#19},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Data in Motion, LLC: WeeK\#19}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{url }\OtherTok{\textless{}{-}} \StringTok{\textquotesingle{}https://raw.githubusercontent.com/kedeisha1/Challenges/main/coaster\_db.csv\textquotesingle{}}
+\NormalTok{data}\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(url)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tibble' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v forcats   1.0.0     v readr     2.1.4
+## v ggplot2   3.4.2     v stringr   1.5.0
+## v lubridate 1.9.2     v tibble    3.2.1
+## v purrr     1.0.1     v tidyr     1.3.0
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(lubridate)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(tidyr)}
+
+\FunctionTok{str}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    1087 obs. of  56 variables:
+##  $ coaster_name                 : chr  "Switchback Railway" "Flip Flap Railway" "Switchback Railway (Euclid Beach Park)" "Loop the Loop (Coney Island)" ...
+##  $ Length                       : chr  "600 ft (180 m)" "" "" "" ...
+##  $ Speed                        : chr  "6 mph (9.7 km/h)" "" "" "" ...
+##  $ Location                     : chr  "Coney Island" "Sea Lion Park" "Cleveland, Ohio, United States" "Other" ...
+##  $ Status                       : chr  "Removed" "Removed" "Closed" "Removed" ...
+##  $ Opening.date                 : chr  "June 16, 1884" "1895" "" "1901" ...
+##  $ Type                         : chr  "Wood" "Wood" "Other" "Steel" ...
+##  $ Manufacturer                 : chr  "LaMarcus Adna Thompson" "Lina Beecher" "" "Edwin Prescott" ...
+##  $ Height.restriction           : chr  "" "" "" "" ...
+##  $ Model                        : chr  "Lift Packed" "" "" "" ...
+##  $ Height                       : chr  "50 ft (15 m)" "" "" "" ...
+##  $ Inversions                   : int  NA 1 NA 1 1 NA NA NA NA NA ...
+##  $ Lift.launch.system           : chr  "gravity" "" "" "" ...
+##  $ Cost                         : chr  "" "" "" "" ...
+##  $ Trains                       : chr  "" "a single car. Riders are arranged 1 across in 2 rows for a total of 2 riders per train." "" "a single car. Riders are arranged 2 across in 2 rows for a total of 4 riders per train." ...
+##  $ Park.section                 : chr  "Coney Island Cyclone Site" "" "" "" ...
+##  $ Duration                     : chr  "1:00" "" "" "" ...
+##  $ Capacity                     : chr  "1600 riders per hour" "" "" "" ...
+##  $ G.force                      : chr  "2.9" "12" "" "" ...
+##  $ Designer                     : chr  "LaMarcus Adna Thompson" "Lina Beecher" "" "Edward A. Green" ...
+##  $ Max.vertical.angle           : chr  "30°" "" "" "" ...
+##  $ Drop                         : chr  "43 ft (13 m)" "" "" "" ...
+##  $ Soft.opening.date            : chr  "" "" "" "" ...
+##  $ Fast.Lane.available          : chr  "" "" "" "" ...
+##  $ Replaced                     : chr  "" "" "" "Switchback Railway" ...
+##  $ Track.layout                 : chr  "Gravity pulled coaster" "" "" "" ...
+##  $ Fastrack.available           : chr  "" "" "" "" ...
+##  $ Soft.opening.date.1          : chr  "" "" "" "" ...
+##  $ Closing.date                 : chr  "" "1902" "" "1910" ...
+##  $ Opened                       : chr  "" "" "1895" "" ...
+##  $ Replaced.by                  : chr  "" "" "" "Giant Racer" ...
+##  $ Website                      : chr  "" "" "" "" ...
+##  $ Flash.Pass.Available         : chr  "" "" "" "" ...
+##  $ Must.transfer.from.wheelchair: chr  "" "" "" "" ...
+##  $ Theme                        : chr  "" "" "" "" ...
+##  $ Single.rider.line.available  : chr  "" "" "" "" ...
+##  $ Restraint.Style              : chr  "" "" "" "" ...
+##  $ Flash.Pass.available         : chr  "" "" "" "" ...
+##  $ Acceleration                 : chr  "" "" "" "" ...
+##  $ Restraints                   : chr  "" "" "" "" ...
+##  $ Name                         : chr  "" "" "" "" ...
+##  $ year_introduced              : int  1884 1895 1896 1901 1901 1902 1902 1904 1907 1907 ...
+##  $ latitude                     : num  40.6 40.6 41.6 40.6 39.4 ...
+##  $ longitude                    : num  -74 -74 -81.6 -74 -74.4 ...
+##  $ Type_Main                    : chr  "Wood" "Wood" "Other" "Steel" ...
+##  $ opening_date_clean           : chr  "1884-06-16" "1895-01-01" "" "1901-01-01" ...
+##  $ speed1                       : chr  "6 mph " "" "" "" ...
+##  $ speed2                       : chr  "9.7 km/h" "" "" "" ...
+##  $ speed1_value                 : num  6 NA NA NA NA NA 10 NA NA NA ...
+##  $ speed1_unit                  : chr  "mph" "" "" "" ...
+##  $ speed_mph                    : num  6 NA NA NA NA NA 10 NA NA NA ...
+##  $ height_value                 : num  50 NA NA NA NA 40 41 NA 60 NA ...
+##  $ height_unit                  : chr  "ft" "" "" "" ...
+##  $ height_ft                    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ Inversions_clean             : int  0 1 0 1 1 0 0 0 0 0 ...
+##  $ Gforce_clean                 : num  2.9 12 NA NA NA NA NA NA NA NA ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Question 1: How many columns and rows are in the dataset?}
+\FunctionTok{nrow}\NormalTok{(data)}\CommentTok{\# number of rows }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1087
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ncol}\NormalTok{(data)}\CommentTok{\# number of columns }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 56
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1087   56
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Question 2: Is there any missing data?}
+
+\NormalTok{missing\_data }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise\_all}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{sum}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(.))) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}\FunctionTok{everything}\NormalTok{(), }\AttributeTok{names\_to =} \StringTok{"Variable"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"count\_missing"}\NormalTok{)}
+
+\CommentTok{\# Visualize and count missing data for each variable }
+\FunctionTok{ggplot}\NormalTok{(missing\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ count\_missing, }\AttributeTok{y =}\NormalTok{ Variable, }\AttributeTok{fill =}\NormalTok{ Variable))}\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{DataMotion-WK-19_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Question 3: Display the summary statistics of the numeric columns using the describe method.}
+\FunctionTok{library}\NormalTok{(psych)}\CommentTok{\# describe function is from psych package}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'psych' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'psych'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:ggplot2':
+## 
+##     %+%, alpha
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{describe}\NormalTok{(data[, }\FunctionTok{sapply}\NormalTok{(data, is.numeric)])}\CommentTok{\# sapply used for numeric variabels }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  vars    n    mean     sd  median trimmed   mad     min     max
+## Inversions          1  932    1.55   2.11    0.00    1.18  0.00    0.00   14.00
+## year_introduced     2 1087 1994.99  23.48 2000.00 1999.14 16.31 1884.00 2022.00
+## latitude            3  812   38.37  15.52   40.29   40.44  7.69  -48.26   63.23
+## longitude           4  812  -41.60  72.29  -76.65  -54.06 26.44 -123.04  153.43
+## speed1_value        5  937   53.85  23.39   50.00   51.60 17.79    5.00  240.00
+## speed_mph           6  937   48.62  16.68   49.70   48.16 15.27    5.00  149.10
+## height_value        7  965   89.58 136.25   79.00   79.90 51.89    4.00 3937.00
+## height_ft           8  171  102.00  67.33   91.20   93.42 59.30   13.10  377.30
+## Inversions_clean    9 1087    1.33   2.03    0.00    0.92  0.00    0.00   14.00
+## Gforce_clean       10  362    3.82   0.99    4.00    3.85  0.74    0.80   12.00
+##                    range  skew kurtosis   se
+## Inversions         14.00  1.34     1.56 0.07
+## year_introduced   138.00 -2.01     4.42 0.71
+## latitude          111.49 -2.80    10.23 0.54
+## longitude         276.46  1.33     0.87 2.54
+## speed1_value      235.00  1.76     7.39 0.76
+## speed_mph         144.10  0.58     2.21 0.54
+## height_value     3933.00 23.42   656.16 4.39
+## height_ft         364.20  1.40     2.60 5.15
+## Inversions_clean   14.00  1.56     2.24 0.06
+## Gforce_clean       11.20  1.13    12.17 0.05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Question 4:Rename the following columns:}
+\CommentTok{\# a. coaster\_name ➡️ Coaster\_Name}
+\CommentTok{\# b. year\_introduced ➡️ Year\_Introduced}
+\CommentTok{\# c. opening\_date\_clean ➡️ Opening\_Date}
+\CommentTok{\# d. speed\_mph ➡️ Speed\_mph}
+\CommentTok{\# e. height\_ft ➡️ Height\_ft}
+\CommentTok{\# f. Inversions\_clean ➡️ Inversions}
+\CommentTok{\# g. Gforce\_clean ➡️ Gforce}
+
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{Coaster\_Name =}\NormalTok{ coaster\_name, }
+         \AttributeTok{Year\_Introduced =}\NormalTok{ year\_introduced, }
+         \AttributeTok{Opening\_Date =}\NormalTok{ opening\_date\_clean, }
+         \AttributeTok{Speed\_mph =}\NormalTok{ speed\_mph, }
+         \AttributeTok{Height\_ft =}\NormalTok{ height\_ft, }
+         \AttributeTok{Inversion\_status =}\NormalTok{ Inversions\_clean, }\CommentTok{\# "Inversion" already existed in the dataframe, thus, it renamed as "Inversion\_status"}
+         \AttributeTok{Gforce =}\NormalTok{ Gforce\_clean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# \# Question 5: Are there any duplicated rows?}
+
+\NormalTok{dup\_rows }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(}\FunctionTok{duplicated}\NormalTok{(.))}
+
+\FunctionTok{nrow}\NormalTok{(dup\_rows)}\CommentTok{\# Zero duplicate rows }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# \# Question 6: What are the top 3 years with the most roller coasters introduced?}
+\FunctionTok{str}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    1087 obs. of  56 variables:
+##  $ Coaster_Name                 : chr  "Switchback Railway" "Flip Flap Railway" "Switchback Railway (Euclid Beach Park)" "Loop the Loop (Coney Island)" ...
+##  $ Length                       : chr  "600 ft (180 m)" "" "" "" ...
+##  $ Speed                        : chr  "6 mph (9.7 km/h)" "" "" "" ...
+##  $ Location                     : chr  "Coney Island" "Sea Lion Park" "Cleveland, Ohio, United States" "Other" ...
+##  $ Status                       : chr  "Removed" "Removed" "Closed" "Removed" ...
+##  $ Opening.date                 : chr  "June 16, 1884" "1895" "" "1901" ...
+##  $ Type                         : chr  "Wood" "Wood" "Other" "Steel" ...
+##  $ Manufacturer                 : chr  "LaMarcus Adna Thompson" "Lina Beecher" "" "Edwin Prescott" ...
+##  $ Height.restriction           : chr  "" "" "" "" ...
+##  $ Model                        : chr  "Lift Packed" "" "" "" ...
+##  $ Height                       : chr  "50 ft (15 m)" "" "" "" ...
+##  $ Inversions                   : int  NA 1 NA 1 1 NA NA NA NA NA ...
+##  $ Lift.launch.system           : chr  "gravity" "" "" "" ...
+##  $ Cost                         : chr  "" "" "" "" ...
+##  $ Trains                       : chr  "" "a single car. Riders are arranged 1 across in 2 rows for a total of 2 riders per train." "" "a single car. Riders are arranged 2 across in 2 rows for a total of 4 riders per train." ...
+##  $ Park.section                 : chr  "Coney Island Cyclone Site" "" "" "" ...
+##  $ Duration                     : chr  "1:00" "" "" "" ...
+##  $ Capacity                     : chr  "1600 riders per hour" "" "" "" ...
+##  $ G.force                      : chr  "2.9" "12" "" "" ...
+##  $ Designer                     : chr  "LaMarcus Adna Thompson" "Lina Beecher" "" "Edward A. Green" ...
+##  $ Max.vertical.angle           : chr  "30°" "" "" "" ...
+##  $ Drop                         : chr  "43 ft (13 m)" "" "" "" ...
+##  $ Soft.opening.date            : chr  "" "" "" "" ...
+##  $ Fast.Lane.available          : chr  "" "" "" "" ...
+##  $ Replaced                     : chr  "" "" "" "Switchback Railway" ...
+##  $ Track.layout                 : chr  "Gravity pulled coaster" "" "" "" ...
+##  $ Fastrack.available           : chr  "" "" "" "" ...
+##  $ Soft.opening.date.1          : chr  "" "" "" "" ...
+##  $ Closing.date                 : chr  "" "1902" "" "1910" ...
+##  $ Opened                       : chr  "" "" "1895" "" ...
+##  $ Replaced.by                  : chr  "" "" "" "Giant Racer" ...
+##  $ Website                      : chr  "" "" "" "" ...
+##  $ Flash.Pass.Available         : chr  "" "" "" "" ...
+##  $ Must.transfer.from.wheelchair: chr  "" "" "" "" ...
+##  $ Theme                        : chr  "" "" "" "" ...
+##  $ Single.rider.line.available  : chr  "" "" "" "" ...
+##  $ Restraint.Style              : chr  "" "" "" "" ...
+##  $ Flash.Pass.available         : chr  "" "" "" "" ...
+##  $ Acceleration                 : chr  "" "" "" "" ...
+##  $ Restraints                   : chr  "" "" "" "" ...
+##  $ Name                         : chr  "" "" "" "" ...
+##  $ Year_Introduced              : int  1884 1895 1896 1901 1901 1902 1902 1904 1907 1907 ...
+##  $ latitude                     : num  40.6 40.6 41.6 40.6 39.4 ...
+##  $ longitude                    : num  -74 -74 -81.6 -74 -74.4 ...
+##  $ Type_Main                    : chr  "Wood" "Wood" "Other" "Steel" ...
+##  $ Opening_Date                 : chr  "1884-06-16" "1895-01-01" "" "1901-01-01" ...
+##  $ speed1                       : chr  "6 mph " "" "" "" ...
+##  $ speed2                       : chr  "9.7 km/h" "" "" "" ...
+##  $ speed1_value                 : num  6 NA NA NA NA NA 10 NA NA NA ...
+##  $ speed1_unit                  : chr  "mph" "" "" "" ...
+##  $ Speed_mph                    : num  6 NA NA NA NA NA 10 NA NA NA ...
+##  $ height_value                 : num  50 NA NA NA NA 40 41 NA 60 NA ...
+##  $ height_unit                  : chr  "ft" "" "" "" ...
+##  $ Height_ft                    : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ Inversion_status             : int  0 1 0 1 1 0 0 0 0 0 ...
+##  $ Gforce                       : num  2.9 12 NA NA NA NA NA NA NA NA ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{top\_three }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Year\_Introduced) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{() }
+
+\FunctionTok{ggplot}\NormalTok{(top\_three, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year\_Introduced, }\AttributeTok{y =}\NormalTok{ n)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"steelblue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Year Introduced"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Number of Coasters"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Top Three Most Frequent Year of Introduction"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{( }\AttributeTok{breaks =} \FunctionTok{unique}\NormalTok{(top\_three}\SpecialCharTok{$}\NormalTok{Year\_Introduced))}\SpecialCharTok{+} \CommentTok{\# to display year on x{-}axis }
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{, }\AttributeTok{vjust =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{hjust=}\DecValTok{1}\NormalTok{)) }\CommentTok{\# to make "year" vertical on plot}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{DataMotion-WK-19_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\emph{top three years} are 1998, 1999, 2000
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# What is the average speed? Also display a plot to show it’s distribution.}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}

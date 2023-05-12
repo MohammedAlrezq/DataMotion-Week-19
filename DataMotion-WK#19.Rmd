@@ -1,5 +1,10 @@
 ---
-title: "Data in Motion, LLC: WeeK#19"
+title: 'Data in Motion, LLC: WeeK#19'
+editor_options:
+  chunk_output_type: inline
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ```{r}
@@ -7,14 +12,13 @@ url <- 'https://raw.githubusercontent.com/kedeisha1/Challenges/main/coaster_db.c
 data<- read.csv(url)
 ```
 
-```{r}
-library(dplyr)
+```{r, warning=FALSE}
+#library(dplyr)#rem
 library(tidyverse)
-library(lubridate)
-library(ggplot2)
-library(tidyr)
+#library(lubridate)#rem
+#library(ggplot2)#rem
+#library(tidyr)
 
-str(data)
 
 #Question 1: How many columns and rows are in the dataset?
 nrow(data)# number of rows 
@@ -25,16 +29,20 @@ dim(data)
 
 ```{r}
 #Question 2: Is there any missing data?
+missing_data <- data %>%
+  replace(is.na(.), "") %>% # replace NA values with empty string
+  summarise_all(~sum(. == "")) # count missing values for each variable
 
-missing_data <- data %>% 
-  summarise_all(~ sum(is.na(.))) %>% 
-  pivot_longer(everything(), names_to = "Variable", values_to = "count_missing")
+missing_data <- missing_data %>%
+  gather(variable, count_missing) %>%
+  arrange(desc(count_missing))
 
-# Visualize and count missing data for each variable 
-ggplot(missing_data, aes(x = count_missing, y = Variable, fill = Variable))+
-  geom_col()
+missing_data
+
+sum(missing_data$count_missing)
+
 ```
-
+In total, there are 29435 missing values and they sorted in descending order 
 
 ```{r}
 #Question 3: Display the summary statistics of the numeric columns using the describe method.
@@ -68,34 +76,24 @@ data <- data %>%
 
 ```{r}
 # # Question 5: Are there any duplicated rows?
-
-dup_rows <- data %>% 
+data %>% 
   filter(duplicated(.))
-
-nrow(dup_rows)# Zero duplicate rows 
 ```
 
 ```{r}
 # # Question 6: What are the top 3 years with the most roller coasters introduced?
-str(data)
 
-top_three <- data %>% 
+ data %>% 
   group_by(Year_Introduced) %>% 
-  count() 
-
-ggplot(top_three, aes(x = Year_Introduced, y = n)) +
-  geom_bar(stat = "identity", fill = "steelblue") +
-  labs(x = "Year Introduced", y = "Number of Coasters") +
-  ggtitle("Top Three Most Frequent Year of Introduction")+
-  scale_x_continuous( breaks = unique(top_three$Year_Introduced))+ # to display year on x-axis 
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) # to make "year" vertical on plot
- 
+  count() %>% 
+  arrange(desc(n)) %>% 
+  head(3)
 ```
 
 *top three years* are 1998, 1999, 2000
 
 ```{r}
+# What is the average speed? Also display a plot to show it’s distribution.
 
-  
 ```
 
